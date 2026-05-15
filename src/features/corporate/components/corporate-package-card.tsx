@@ -1,0 +1,3 @@
+import type { CorporatePackage } from "../types/corporate.type";
+import { formatCurrency } from "@/core/lib/currency";
+export function CorporatePackageCard({ item }: { item: CorporatePackage }) { return <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm"><h3 className="text-xl font-black text-zinc-950">{item.name}</h3><p className="mt-2 text-sm leading-7 text-zinc-600">{item.description}</p><p className="mt-4 font-black text-emerald-800">Mulai {formatCurrency(item.priceFrom)} / pax</p><p className="text-xs text-zinc-500">Min. {item.minPax} pax</p><ul className="mt-5 space-y-2 text-sm text-zinc-600">{item.features.map((f) => <li key={f}>• {f}</li>)}</ul></div>; }

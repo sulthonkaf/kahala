@@ -1,0 +1,1 @@
+export function ProductGallery({ emoji }: { emoji: string }) { return <div className="flex aspect-square items-center justify-center rounded-[2.5rem] bg-gradient-to-br from-emerald-50 to-amber-50 text-9xl shadow-inner">{emoji}</div>; }

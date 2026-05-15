@@ -1,0 +1,2 @@
+import { Table, TBody, TD, TH, THead, TR } from "@/core/components/ui/table";
+export function AdminDataTable({ title }: { title: string }) { return <div className="rounded-3xl border border-zinc-200 bg-white p-4"><h2 className="mb-4 text-lg font-black text-zinc-950">{title}</h2><Table><THead><TR><TH>Name</TH><TH>Status</TH><TH>Updated</TH></TR></THead><TBody><TR><TD>Sample Data</TD><TD>Active</TD><TD>Today</TD></TR></TBody></Table></div>; }

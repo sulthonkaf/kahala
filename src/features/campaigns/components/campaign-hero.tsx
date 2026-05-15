@@ -1,0 +1,2 @@
+import type { Campaign } from "../types/campaign.type";
+export function CampaignHero({ campaign }: { campaign: Campaign }) { return <div className="rounded-[2.5rem] bg-emerald-800 p-10 text-white"><p className="text-sm font-black uppercase tracking-[0.24em] text-emerald-100">Campaign</p><h1 className="mt-4 text-4xl font-black sm:text-6xl">{campaign.title}</h1><p className="mt-5 max-w-2xl text-emerald-50/80">{campaign.description}</p></div>; }

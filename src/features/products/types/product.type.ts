@@ -1,0 +1,2 @@
+export type ProductCategory = "diet-friendly" | "sweet-control" | "fruit-mix-bowl" | "fresh-boost" | "sharing-pack";
+export type Product = { id: string; slug: string; name: string; description: string; category: ProductCategory; price: number; image?: string; emoji: string; badges: string[]; nutrition: { calories: number; sugar: string; protein: string; }; isBestSeller?: boolean; isCorporateReady?: boolean; };

@@ -1,0 +1,2 @@
+import type { AdminStat } from "../types/admin.type";
+export function AdminStatCard({ stat }: { stat: AdminStat }) { return <div className="rounded-3xl border border-zinc-200 bg-white p-6"><p className="text-sm font-bold text-zinc-500">{stat.label}</p><p className="mt-3 text-3xl font-black text-zinc-950">{stat.value}</p>{stat.hint ? <p className="mt-2 text-xs text-emerald-700">{stat.hint}</p> : null}</div>; }

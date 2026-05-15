@@ -1,0 +1,5 @@
+import Link from "next/link";
+import type { Product } from "../types/product.type";
+import { formatCurrency } from "@/core/lib/currency";
+import { Badge } from "@/core/components/ui/badge";
+export function ProductCard({ product }: { product: Product }) { return <Link href={`/menu/${product.slug}`} className="group overflow-hidden rounded-[2rem] border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-950/10"><div className="flex aspect-square items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-emerald-50 to-amber-50 text-7xl">{product.emoji}</div><div className="mt-5"><div className="flex flex-wrap gap-2">{product.badges.map((badge) => <Badge key={badge}>{badge}</Badge>)}</div><h3 className="mt-3 text-xl font-black text-zinc-950 group-hover:text-emerald-800">{product.name}</h3><p className="mt-2 line-clamp-2 text-sm leading-6 text-zinc-600">{product.description}</p><p className="mt-4 text-lg font-black text-emerald-800">{formatCurrency(product.price)}</p></div></Link>; }

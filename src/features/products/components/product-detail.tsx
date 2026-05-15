@@ -1,0 +1,7 @@
+import Link from "next/link";
+import type { Product } from "../types/product.type";
+import { formatCurrency } from "@/core/lib/currency";
+import { generateGeneralOrderMessage, generateWhatsAppUrl } from "@/core/lib/whatsapp";
+import { ProductBadgeList } from "./product-badge-list";
+import { ProductGallery } from "./product-gallery";
+export function ProductDetail({ product }: { product: Product }) { return <div className="grid gap-12 lg:grid-cols-2"><ProductGallery emoji={product.emoji} /><div><ProductBadgeList badges={product.badges} /><h1 className="mt-5 text-4xl font-black tracking-tight text-zinc-950 sm:text-5xl">{product.name}</h1><p className="mt-5 text-lg leading-8 text-zinc-600">{product.description}</p><p className="mt-6 text-3xl font-black text-emerald-800">{formatCurrency(product.price)}</p><div className="mt-6 grid grid-cols-3 gap-3">{Object.entries(product.nutrition).map(([key, value]) => <div key={key} className="rounded-2xl bg-white p-4 text-center shadow-sm"><p className="text-xs font-bold uppercase text-zinc-400">{key}</p><p className="mt-1 font-black text-zinc-950">{value}</p></div>)}</div><Link href={generateWhatsAppUrl(generateGeneralOrderMessage({ productName: product.name, quantity: 1 }))} target="_blank" rel="noreferrer" className="mt-8 inline-flex h-13 items-center justify-center rounded-full bg-emerald-700 px-8 text-sm font-black text-white shadow-xl shadow-emerald-900/20 hover:bg-emerald-800">Order via WhatsApp</Link></div></div>; }

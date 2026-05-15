@@ -1,0 +1,38 @@
+export const APP_ROUTES = {
+  home: "/",
+  menu: "/menu",
+  bundles: "/bundles",
+  corporateOrder: "/corporate-order",
+  blog: "/blog",
+  about: "/about",
+  whyKahala: "/why-kahala",
+  faq: "/faq",
+  contact: "/contact",
+  cart: "/order/cart",
+  checkout: "/order/checkout",
+  success: "/order/success",
+  tracking: "/order/tracking",
+  login: "/login",
+  register: "/register",
+  dashboard: "/dashboard",
+  dashboardOrders: "/dashboard/orders",
+  dashboardFavorites: "/dashboard/favorites",
+  dashboardAddresses: "/dashboard/addresses",
+  dashboardProfile: "/dashboard/profile",
+  admin: "/admin",
+  adminProducts: "/admin/products",
+  adminCategories: "/admin/categories",
+  adminOrders: "/admin/orders",
+  adminCustomers: "/admin/customers",
+  adminCorporateLeads: "/admin/corporate-leads",
+  adminCampaigns: "/admin/campaigns",
+  adminArticles: "/admin/articles",
+  adminTestimonials: "/admin/testimonials",
+  adminFaqs: "/admin/faqs",
+  adminReports: "/admin/reports",
+  adminSettings: "/admin/settings",
+} as const;
+
+export function productHref(slug: string) { return `/menu/${slug}`; }
+export function blogHref(slug: string) { return `/blog/${slug}`; }
+export function campaignHref(slug: string) { return `/campaign/${slug}`; }
