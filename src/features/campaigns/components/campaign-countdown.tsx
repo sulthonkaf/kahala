@@ -1,1 +1,1 @@
-export function CampaignCountdown({ endsAt }: { endsAt: string }) { return <div className="rounded-3xl border border-amber-200 bg-amber-50 p-5 text-sm font-black text-amber-800">Campaign ends at {endsAt}</div>; }
+export function CampaignCountdown({ endsAt }: { endsAt: string }) { return <div className="rounded-3xl border border-yellow-200 bg-yellow-50 p-5 text-sm font-black text-yellow-800">Campaign ends at {endsAt}</div>; }

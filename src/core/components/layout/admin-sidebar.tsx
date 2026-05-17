@@ -29,7 +29,7 @@ export function AdminSidebar() {
                 href={item.href}
                 className={cn(
                   "flex rounded-2xl px-4 py-3 text-sm font-bold transition",
-                  active ? "bg-[#D47575] text-white" : "text-zinc-600 hover:bg-rose-50 hover:text-[#D47575]",
+                  active ? "bg-green-600 text-white" : "text-zinc-600 hover:bg-green-50 hover:text-green-800",
                 )}
               >
                 {item.label}

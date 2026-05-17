@@ -14,7 +14,7 @@ export function BrandLogo({ compact = false, className }: BrandLogoProps) {
         alt="Kahala Koesoema"
         width={256}
         height={256}
-        className={cn("h-11 w-11 rounded-2xl object-cover shadow-lg shadow-rose-900/10", className)}
+        className={cn("h-11 w-11 rounded-2xl object-cover shadow-lg shadow-green-900/10", className)}
         priority
       />
     );
@@ -26,7 +26,7 @@ export function BrandLogo({ compact = false, className }: BrandLogoProps) {
       alt="Kahala Koesoema"
       width={620}
       height={306}
-      className={cn("h-12 w-auto rounded-2xl object-contain shadow-lg shadow-rose-900/10", className)}
+      className={cn("h-12 w-auto rounded-2xl object-contain shadow-lg shadow-green-900/10", className)}
       priority
     />
   );

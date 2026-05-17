@@ -1,2 +1,2 @@
 const steps = ["Brief kebutuhan", "Rekomendasi paket", "Konfirmasi jadwal", "Produksi & delivery"];
-export function CorporateProcessSection() { return <div className="grid gap-4 md:grid-cols-4">{steps.map((s, i) => <div key={s} className="rounded-3xl bg-emerald-50 p-5"><p className="text-sm font-black text-emerald-700">0{i + 1}</p><p className="mt-2 font-black text-zinc-950">{s}</p></div>)}</div>; }
+export function CorporateProcessSection() { return <div className="grid gap-4 md:grid-cols-4">{steps.map((s, i) => <div key={s} className="rounded-3xl bg-green-50 p-5"><p className="text-sm font-black text-green-700">0{i + 1}</p><p className="mt-2 font-black text-zinc-950">{s}</p></div>)}</div>; }

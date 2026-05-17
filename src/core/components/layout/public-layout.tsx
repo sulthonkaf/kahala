@@ -3,4 +3,4 @@ import { GsapMotionProvider } from "@/core/components/common/gsap-motion-provide
 import { PublicFooter } from "./public-footer";
 import { PublicNavbar } from "./public-navbar";
 import { WhatsAppFloatingButton } from "@/core/components/common/whatsapp-floating-button";
-export function PublicLayout({ children }: { children: ReactNode }) { return <div className="min-h-screen bg-[#FFFDF7] text-zinc-950"><GsapMotionProvider /><PublicNavbar /><main>{children}</main><PublicFooter /><WhatsAppFloatingButton /></div>; }
+export function PublicLayout({ children }: { children: ReactNode }) { return <div className="min-h-screen bg-[#FFF7ED] text-zinc-950"><GsapMotionProvider /><PublicNavbar /><main>{children}</main><PublicFooter /><WhatsAppFloatingButton /></div>; }

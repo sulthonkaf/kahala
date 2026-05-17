@@ -33,11 +33,11 @@ const groups = [
 
 export function PublicFooter() {
   return (
-    <footer className="border-t border-rose-950/10 bg-[#7E4747] text-white">
+    <footer className="border-t border-green-950/10 bg-green-800 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.2fr_2fr] lg:px-8">
         <div>
-          <BrandLogo className="h-16 shadow-rose-950/20" />
-          <p className="mt-5 max-w-md text-sm leading-7 text-rose-50/85">
+          <BrandLogo className="h-16 shadow-green-950/20" />
+          <p className="mt-5 max-w-md text-sm leading-7 text-green-50/85">
             Snack sehat yang dirancang untuk lifestyle modern: fresh, praktis, enak, dan mudah dipesan untuk personal maupun corporate order.
           </p>
         </div>
@@ -47,7 +47,7 @@ export function PublicFooter() {
               <h3 className="font-bold">{group.title}</h3>
               <div className="mt-4 space-y-3">
                 {group.links.map((link) => (
-                  <Link key={link.href} href={link.href} className="block text-sm text-rose-50/75 transition hover:text-white">
+                  <Link key={link.href} href={link.href} className="block text-sm text-green-50/75 transition hover:text-yellow-200">
                     {link.label}
                   </Link>
                 ))}
@@ -57,7 +57,7 @@ export function PublicFooter() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 text-sm text-rose-50/75 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 text-sm text-green-50/75 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} Kahala Koesoema. All rights reserved.</p>
           <p>Made for better daily snacking.</p>
         </div>

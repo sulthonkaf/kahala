@@ -1,7 +1,13 @@
 :root {
-  --kahala-primary: #2f6b4f;
-  --kahala-primary-dark: #214d3a;
-  --kahala-primary-soft: #e8f3ed;
-  --kahala-secondary: #f2b84b;
-  --kahala-cream: #fff8ec;
+  --kahala-primary: #22c55e;
+  --kahala-primary-dark: #166534;
+  --kahala-primary-soft: #dcfce7;
+  --kahala-cta: #f97316;
+  --kahala-highlight: #facc15;
+  --kahala-accent: #fb7185;
+  --kahala-secondary: #f97316;
+  --kahala-cream: #fff7ed;
+  --kahala-surface: #ffffff;
+  --kahala-text: #1f2937;
+  --kahala-muted: #667085;
 }

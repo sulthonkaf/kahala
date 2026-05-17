@@ -3,14 +3,23 @@
 :root {
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: Georgia, "Times New Roman", serif;
-  --background: #fffdf7;
-  --foreground: #17231c;
-  --primary: #2f6b4f;
-  --primary-dark: #214d3a;
-  --primary-soft: #e8f3ed;
-  --secondary: #f2b84b;
-  --cream: #fff8ec;
-  --muted: #66746b;
+  --kahala-primary: #22c55e;
+  --kahala-primary-dark: #166534;
+  --kahala-cta: #f97316;
+  --kahala-highlight: #facc15;
+  --kahala-accent: #fb7185;
+  --kahala-bg: #fff7ed;
+  --kahala-surface: #ffffff;
+  --kahala-text: #1f2937;
+  --kahala-muted: #667085;
+  --background: var(--kahala-bg);
+  --foreground: var(--kahala-text);
+  --primary: var(--kahala-primary);
+  --primary-dark: var(--kahala-primary-dark);
+  --primary-soft: #dcfce7;
+  --secondary: var(--kahala-cta);
+  --cream: var(--kahala-bg);
+  --muted: var(--kahala-muted);
   --border: #e7ece8;
 }
 
@@ -20,8 +29,8 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   background:
-    radial-gradient(circle at top left, rgba(47, 107, 79, 0.08), transparent 34rem),
-    radial-gradient(circle at top right, rgba(242, 184, 75, 0.13), transparent 30rem),
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 34rem),
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.1), transparent 30rem),
     var(--background);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
@@ -31,6 +40,6 @@ button, input, textarea, select { font: inherit; }
 ::selection { background: var(--primary); color: #fff; }
 .font-display { font-family: var(--font-display); }
 .kahala-noise {
-  background-image: radial-gradient(rgba(47, 107, 79, .08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(34, 197, 94, .1) 1px, transparent 1px);
   background-size: 18px 18px;
 }

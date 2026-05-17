@@ -19,15 +19,15 @@ function HeroBowl() {
     <group ref={bowlRef} position={[0, -0.22, 0]} rotation={[0.08, -0.18, 0]} scale={1.08}>
       <mesh position={[0, -0.34, 0]} scale={[1.55, 0.42, 0.92]}>
         <sphereGeometry args={[1, 36, 18]} />
-        <meshStandardMaterial color="#2f6b4f" roughness={0.62} metalness={0.04} />
+        <meshStandardMaterial color="#22c55e" roughness={0.62} metalness={0.04} />
       </mesh>
       <mesh position={[0, -0.1, 0]} rotation={[Math.PI / 2, 0, 0]} scale={[1.56, 0.9, 1]}>
         <torusGeometry args={[0.78, 0.055, 16, 64]} />
-        <meshStandardMaterial color="#fff8ec" roughness={0.54} metalness={0.02} />
+        <meshStandardMaterial color="#fff7ed" roughness={0.54} metalness={0.02} />
       </mesh>
       <mesh position={[0, 0.03, 0]} scale={[1.18, 0.18, 0.68]}>
         <sphereGeometry args={[1, 28, 14]} />
-        <meshStandardMaterial color="#e8f3ed" roughness={0.7} />
+        <meshStandardMaterial color="#dcfce7" roughness={0.7} />
       </mesh>
       <FloatingFruit kind="strawberry" position={[-0.48, 0.26, 0.2]} rotation={[0.1, 0.2, -0.2]} scale={0.44} speed={1.35} />
       <FloatingFruit kind="kiwi" position={[0.12, 0.29, 0.28]} rotation={[0.4, 0.2, 0]} scale={0.48} speed={1.1} />
@@ -41,8 +41,8 @@ function HeroSceneContent() {
   return (
     <>
       <ambientLight intensity={1.65} />
-      <directionalLight position={[3.5, 4, 4]} intensity={2.15} color="#fff4da" />
-      <pointLight position={[-2.8, 1.8, 2.4]} intensity={0.55} color="#e8f3ed" />
+      <directionalLight position={[3.5, 4, 4]} intensity={2.15} color="#fff7ed" />
+      <pointLight position={[-2.8, 1.8, 2.4]} intensity={0.55} color="#dcfce7" />
       <group position={[0, -0.03, 0]} scale={0.76}>
         <HeroBowl />
         <FloatingFruit kind="strawberry" position={[-1.22, 1.05, -0.12]} rotation={[0.2, -0.4, 0.1]} scale={0.34} speed={1.15} />
@@ -60,7 +60,7 @@ export function KahalaHeroScene() {
   return (
     <motion.div
       aria-hidden="true"
-      className="relative h-[360px] w-full overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_52%_45%,#ffffff_0,#fff8ec_35%,#e8f3ed_78%)] sm:h-[460px] lg:h-[560px]"
+      className="relative h-[360px] w-full overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_52%_45%,#ffffff_0,#fff7ed_35%,#dcfce7_78%)] sm:h-[460px] lg:h-[560px]"
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
@@ -73,7 +73,7 @@ export function KahalaHeroScene() {
       >
         <HeroSceneContent />
       </Canvas>
-      <div className="pointer-events-none absolute inset-x-10 bottom-7 h-px bg-gradient-to-r from-transparent via-emerald-700/20 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-10 bottom-7 h-px bg-gradient-to-r from-transparent via-green-700/20 to-transparent" />
     </motion.div>
   );
 }

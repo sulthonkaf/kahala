@@ -1,12 +1,15 @@
 export const BRAND_COLORS = {
-  primary: "#2F6B4F",
-  primaryDark: "#214D3A",
-  primarySoft: "#E8F3ED",
-  secondary: "#F2B84B",
-  cream: "#FFF8EC",
-  brown: "#7A4E2D",
-  text: "#17231C",
-  muted: "#66746B",
+  primary: "#22C55E",
+  primaryDark: "#166534",
+  primarySoft: "#DCFCE7",
+  cta: "#F97316",
+  highlight: "#FACC15",
+  accent: "#FB7185",
+  secondary: "#F97316",
+  cream: "#FFF7ED",
+  surface: "#FFFFFF",
+  text: "#1F2937",
+  muted: "#667085",
 } as const;
 
 export const BRAND_MESSAGES = {

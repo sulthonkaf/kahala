@@ -19,9 +19,9 @@ export function CategorySection() {
             <Link
               key={category.id}
               href={`/menu/${category.slug}`}
-              className="group overflow-hidden rounded-[1.75rem] border border-emerald-950/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-950/10"
+              className="group overflow-hidden rounded-[1.75rem] border border-green-950/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-950/10"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-emerald-50">
+              <div className="relative aspect-[16/10] overflow-hidden bg-green-50">
                 <Image
                   src={category.image}
                   alt={`${category.name} Kahala category`}
@@ -29,10 +29,10 @@ export function CategorySection() {
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/55 via-emerald-950/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-green-950/55 via-green-950/10 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4">
                   <h3 className="text-xl font-black text-white">{category.name}</h3>
-                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-emerald-800">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-green-800">
                     <ArrowUpRight className="h-5 w-5" />
                   </span>
                 </div>

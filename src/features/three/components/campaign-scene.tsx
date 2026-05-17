@@ -20,23 +20,23 @@ function CampaignBowlMark() {
     <group ref={markRef} position={[0.2, -0.16, 0]} scale={0.95}>
       <mesh position={[0, -0.28, 0]} scale={[1.28, 0.34, 0.72]}>
         <sphereGeometry args={[1, 32, 16]} />
-        <meshStandardMaterial color="#fff8ec" roughness={0.48} metalness={0.03} />
+        <meshStandardMaterial color="#fff7ed" roughness={0.48} metalness={0.03} />
       </mesh>
       <mesh position={[0, -0.05, 0]} rotation={[Math.PI / 2, 0, 0]} scale={[1.25, 0.68, 1]}>
         <torusGeometry args={[0.74, 0.052, 14, 54]} />
-        <meshStandardMaterial color="#f2b84b" roughness={0.42} metalness={0.04} />
+        <meshStandardMaterial color="#facc15" roughness={0.42} metalness={0.04} />
       </mesh>
       <mesh position={[-0.24, 0.2, 0.16]} scale={[0.3, 0.22, 0.3]}>
         <sphereGeometry args={[1, 18, 18]} />
-        <meshStandardMaterial color="#d94a4a" roughness={0.58} />
+        <meshStandardMaterial color="#fb7185" roughness={0.58} />
       </mesh>
       <mesh position={[0.18, 0.24, 0.08]} scale={[0.28, 0.22, 0.28]}>
         <sphereGeometry args={[1, 18, 18]} />
-        <meshStandardMaterial color="#9fcb63" roughness={0.62} />
+        <meshStandardMaterial color="#22c55e" roughness={0.62} />
       </mesh>
       <mesh position={[0.43, 0.16, -0.02]} scale={[0.24, 0.18, 0.24]}>
         <sphereGeometry args={[1, 18, 18]} />
-        <meshStandardMaterial color="#f2b84b" roughness={0.54} />
+        <meshStandardMaterial color="#facc15" roughness={0.54} />
       </mesh>
     </group>
   );
@@ -71,12 +71,12 @@ function CampaignSceneContent() {
   return (
     <>
       <ambientLight intensity={1.35} />
-      <directionalLight position={[3.2, 3.8, 4]} intensity={2.05} color="#fff0cf" />
-      <pointLight position={[-2, 1.2, 2]} intensity={0.56} color="#e8f3ed" />
+      <directionalLight position={[3.2, 3.8, 4]} intensity={2.05} color="#fff7ed" />
+      <pointLight position={[-2, 1.2, 2]} intensity={0.56} color="#dcfce7" />
       <group position={[0.12, -0.04, 0]}>
         <CampaignBowlMark />
-        <FloatingCampaignCard position={[-1.16, 0.82, -0.16]} rotation={[0.16, 0.26, -0.18]} color="#2f6b4f" />
-        <FloatingCampaignCard position={[1.18, -0.54, -0.24]} rotation={[-0.12, -0.24, 0.16]} color="#f2b84b" />
+        <FloatingCampaignCard position={[-1.16, 0.82, -0.16]} rotation={[0.16, 0.26, -0.18]} color="#22c55e" />
+        <FloatingCampaignCard position={[1.18, -0.54, -0.24]} rotation={[-0.12, -0.24, 0.16]} color="#facc15" />
         <FloatingFruit kind="strawberry" position={[-1.36, -0.35, 0.06]} scale={0.28} speed={1.2} />
         <FloatingFruit kind="kiwi" position={[1.34, 0.72, 0.04]} scale={0.3} speed={1.05} />
         <FloatingFruit kind="leaf" position={[0.02, 1.12, -0.1]} rotation={[0.1, 0.1, 0.6]} scale={0.34} speed={1.25} />
