@@ -30,6 +30,7 @@ export const KAHALA_IMAGES = {
 } as const;
 
 export const KAHALA_VIDEOS = {
-  heroFruit: "https://cdn.pixabay.com/video/2015/10/16/1019-142621240_large.mp4",
-  heroFruitSource: "https://pixabay.com/videos/fruit-salad-bowl-fruits-fruit-1019/",
+  heroFruit: "/videos/kahala-hero-fruit.mp4",
+  heroFruitSource:
+    "https://www.pexels.com/video/close-up-view-of-fruits-in-a-bowl-6989163/",
 } as const;

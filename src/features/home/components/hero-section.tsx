@@ -26,7 +26,7 @@ export function HeroSection() {
   return (
     <section className="relative isolate overflow-hidden bg-[#14532D] text-white">
       <video
-        className="absolute inset-0 -z-30 h-full w-full scale-105 object-cover"
+        className="absolute inset-0 -z-30 h-full w-full scale-[1.02] object-cover brightness-110 contrast-110 saturate-125"
         autoPlay
         muted
         loop
@@ -37,16 +37,17 @@ export function HeroSection() {
       >
         <source src={KAHALA_VIDEOS.heroFruit} type="video/mp4" />
       </video>
-
-      <div className="absolute inset-0 -z-20 bg-[linear-gradient(108deg,rgba(20,83,45,0.96)_0%,rgba(22,101,52,0.88)_42%,rgba(249,115,22,0.42)_76%,rgba(250,204,21,0.34)_100%)]" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_18%,rgba(250,204,21,0.34),transparent_28rem),radial-gradient(circle_at_12%_88%,rgba(34,197,94,0.28),transparent_24rem),linear-gradient(180deg,rgba(0,0,0,0.10),rgba(20,83,45,0.58))]" />
-      <div className="absolute inset-x-0 bottom-0 z-0 h-44 bg-gradient-to-t from-[#FFFDF7] via-[#FFFDF7]/72 to-transparent" />
+      <div className="absolute inset-0 -z-20 bg-[linear-gradient(108deg,rgba(0,0,0,0.58)_0%,rgba(0,0,0,0.34)_42%,rgba(0,0,0,0.18)_72%,rgba(0,0,0,0.10)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_18%,rgba(255,255,255,0.08),transparent_26rem),linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.38)_100%)]" />
+      {/* <div className="absolute inset-x-0 bottom-0 z-0 h-44 bg-gradient-to-t from-[#FFFDF7] via-[#FFFDF7]/72 to-transparent" /> */}
 
       <Container className="relative z-10 grid min-h-[calc(100vh-5rem)] min-w-0 items-center gap-12 py-20 sm:py-24 lg:grid-cols-[1.04fr_0.96fr] lg:py-16 xl:py-20">
         <div className="min-w-0" data-gsap-hero>
-          <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/25 bg-white/14 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white shadow-sm backdrop-blur-xl sm:text-sm">
-            <Leaf className="h-4 w-4 shrink-0 text-[#FACC15]" />
-            <span className="truncate">Fresh fruit bowl for modern lifestyle</span>
+          <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-lime-300/50 bg-lime-500 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white shadow-lg shadow-lime-900/20 transition hover:bg-lime-400 sm:text-sm">
+            <Leaf className="h-4 w-4 shrink-0 text-white" />
+            <span className="truncate">
+              Fresh fruit bowl for modern lifestyle
+            </span>
           </div>
 
           <h1 className="mt-6 max-w-4xl text-balance text-4xl font-black leading-[1.02] tracking-[-0.045em] text-white drop-shadow-sm sm:text-6xl lg:text-7xl">
@@ -77,14 +78,14 @@ export function HeroSection() {
             </Link>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold text-white/82 sm:text-sm">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 backdrop-blur-xl">
-              <ShieldCheck className="h-4 w-4 text-[#FACC15]" />
+          <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold text-white sm:text-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-green-300/40 bg-green-500 px-4 py-2 text-white shadow-lg shadow-green-950/20 transition duration-300 hover:-translate-y-0.5 hover:bg-green-400">
+              <ShieldCheck className="h-4 w-4 text-white" />
               Fresh daily preparation
             </div>
 
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 backdrop-blur-xl">
-              <Star className="h-4 w-4 text-[#FACC15]" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-green-300/40 bg-green-500 px-4 py-2 text-white shadow-lg shadow-green-950/20 transition duration-300 hover:-translate-y-0.5 hover:bg-green-400">
+              <Star className="h-4 w-4 text-white" />
               Healthy but still tasty
             </div>
           </div>
@@ -93,13 +94,14 @@ export function HeroSection() {
             {SITE_STATS.map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-white/18 bg-white/12 p-4 shadow-lg shadow-green-950/10 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-white/16"
+                className="group rounded-2xl border border-green-300/40 bg-green-500 p-4 text-white shadow-xl shadow-green-950/20 transition duration-300 hover:-translate-y-1 hover:bg-green-400 hover:shadow-2xl hover:shadow-green-950/25"
               >
                 <div className="flex items-center gap-2 text-sm font-black text-white">
-                  <CheckCircle2 className="h-4 w-4 text-[#FACC15]" />
+                  <CheckCircle2 className="h-4 w-4 text-white transition duration-300 group-hover:scale-110" />
                   {item.value}
                 </div>
-                <p className="mt-1 text-xs font-semibold leading-5 text-white/70">
+
+                <p className="mt-1 text-xs font-semibold leading-5 text-white/85">
                   {item.label}
                 </p>
               </div>
@@ -108,10 +110,10 @@ export function HeroSection() {
         </div>
 
         <div
-          className="relative isolate min-h-[380px] min-w-0 self-center sm:min-h-[500px] lg:min-h-[560px]"
+          // className="relative isolate min-h-[380px] min-w-0 self-center sm:min-h-[500px] lg:min-h-[560px]"
           data-gsap="fade-up"
         >
-          <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-[radial-gradient(circle_at_50%_42%,rgba(255,247,237,0.46),transparent_64%)]" />
+          {/* <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-[radial-gradient(circle_at_50%_42%,rgba(255,247,237,0.46),transparent_64%)]" /> */}
 
           <div className="absolute -right-6 top-8 hidden h-28 w-28 rounded-full bg-[#FACC15]/30 blur-2xl sm:block" />
           <div className="absolute -left-4 bottom-14 hidden h-36 w-36 rounded-full bg-[#F97316]/24 blur-3xl sm:block" />
