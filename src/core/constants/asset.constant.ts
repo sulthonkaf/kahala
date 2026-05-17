@@ -11,6 +11,14 @@ export const KAHALA_IMAGES = {
     "https://images.unsplash.com/photo-1450152021501-598b36b17449?auto=format&fit=crop&w=1200&q=85",
   fruitPlatter:
     "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1200&q=85",
+  freshFruitSpread:
+    "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  healthyPrep:
+    "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  officeSnack:
+    "https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=1600&q=85",
+  citrusTable:
+    "https://images.unsplash.com/photo-1482012792084-a0c3725f289f?auto=format&fit=crop&w=1600&q=85",
 } as const;
 
 export const KAHALA_VIDEOS = {
