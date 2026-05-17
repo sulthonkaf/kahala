@@ -56,6 +56,23 @@ export function GsapMotionProvider() {
         yoyo: true,
         ease: "sine.inOut",
       });
+
+      const parallaxZone = document.querySelector<HTMLElement>("[data-kahala-parallax-zone]");
+      if (parallaxZone) {
+        gsap.utils.toArray<HTMLElement>("[data-kahala-parallax]").forEach((element) => {
+          const speed = Number(element.dataset.speed ?? 24);
+          gsap.to(element, {
+            y: speed,
+            ease: "none",
+            scrollTrigger: {
+              trigger: parallaxZone,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 0.8,
+            },
+          });
+        });
+      }
     });
 
     return () => context.revert();

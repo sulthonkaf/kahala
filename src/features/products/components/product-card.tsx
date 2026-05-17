@@ -9,7 +9,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/menu/${product.slug}`}
-      className="kahala-product-card group block overflow-hidden rounded-[1.75rem] border border-green-950/10 bg-white shadow-sm transition hover:-translate-y-1 hover:border-green-200 hover:shadow-2xl hover:shadow-green-950/10"
+      className="kahala-product-card group block overflow-hidden rounded-[1.75rem] border border-white/60 bg-white/72 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:border-green-200 hover:bg-white/88 hover:shadow-2xl hover:shadow-green-950/10"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-green-50">
         {product.image ? (

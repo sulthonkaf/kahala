@@ -7,7 +7,7 @@ import { PRODUCT_CATEGORIES } from "@/core/constants/product.constant";
 
 export function CategorySection() {
   return (
-    <section className="py-20" data-gsap="fade-up">
+    <section className="bg-transparent py-20" data-gsap="fade-up">
       <Container>
         <SectionHeading
           eyebrow="Menu Category"
@@ -18,8 +18,8 @@ export function CategorySection() {
           {PRODUCT_CATEGORIES.filter((category) => category.id !== "all").map((category) => (
             <Link
               key={category.id}
-              href={`/menu/${category.slug}`}
-              className="group overflow-hidden rounded-[1.75rem] border border-green-950/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-950/10"
+              href={`/menu?category=${category.slug}`}
+              className="group overflow-hidden rounded-[1.75rem] border border-white/60 bg-white/70 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/84 hover:shadow-2xl hover:shadow-green-950/10"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-green-50">
                 <Image
