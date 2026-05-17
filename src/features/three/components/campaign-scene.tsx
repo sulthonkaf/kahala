@@ -9,11 +9,13 @@ import { FloatingFruit } from "@/features/three/components/floating-fruit";
 
 function CampaignBowlMark() {
   const markRef = useRef<Group>(null);
+  const elapsedRef = useRef(0);
 
-  useFrame(({ clock }) => {
+  useFrame((_, delta) => {
     if (!markRef.current) return;
-    markRef.current.rotation.y = Math.sin(clock.elapsedTime * 0.34) * 0.18;
-    markRef.current.rotation.z = Math.sin(clock.elapsedTime * 0.24) * 0.035;
+    elapsedRef.current += delta;
+    markRef.current.rotation.y = Math.sin(elapsedRef.current * 0.34) * 0.18;
+    markRef.current.rotation.z = Math.sin(elapsedRef.current * 0.24) * 0.035;
   });
 
   return (

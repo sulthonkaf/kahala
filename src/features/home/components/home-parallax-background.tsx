@@ -1,72 +1,241 @@
-import Image from "next/image";
-import { KAHALA_IMAGES } from "@/core/constants/asset.constant";
+"use client";
 
-const fruitNotes = [
-  { label: "fresh daily", className: "left-[7%] top-[10%] rotate-[-8deg]" },
-  { label: "sweet control", className: "right-[8%] top-[34%] rotate-[7deg]" },
-  { label: "office ready", className: "left-[10%] top-[64%] rotate-[5deg]" },
-];
+import { useRef } from "react";
+import { gsap, useGSAP } from "@/core/animations/gsap";
 
 export function HomeParallaxBackground() {
+  const scope = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(
+    () => {
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (prefersReducedMotion) {
+        return;
+      }
+
+      const zone = document.querySelector("[data-kahala-parallax-zone]");
+
+      if (!zone) {
+        return;
+      }
+
+      gsap.to("[data-parallax-layer='mist-green']", {
+        yPercent: -18,
+        xPercent: 4,
+        rotate: 8,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.2,
+        },
+      });
+
+      gsap.to("[data-parallax-layer='mist-amber']", {
+        yPercent: -26,
+        xPercent: -5,
+        rotate: -8,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.45,
+        },
+      });
+
+      gsap.to("[data-parallax-layer='mist-cream']", {
+        yPercent: -12,
+        xPercent: 3,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      gsap.to("[data-parallax-layer='grid']", {
+        yPercent: -10,
+        opacity: 0.45,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      gsap.to("[data-parallax-layer='card-a']", {
+        yPercent: -42,
+        xPercent: 8,
+        rotate: 14,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.7,
+        },
+      });
+
+      gsap.to("[data-parallax-layer='card-b']", {
+        yPercent: -35,
+        xPercent: -10,
+        rotate: -16,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.55,
+        },
+      });
+
+      gsap.to("[data-parallax-layer='ring-a']", {
+        yPercent: -30,
+        xPercent: -6,
+        rotate: 36,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.6,
+        },
+      });
+
+      gsap.to("[data-parallax-layer='ring-b']", {
+        yPercent: -24,
+        xPercent: 6,
+        rotate: -28,
+        ease: "none",
+        scrollTrigger: {
+          trigger: zone,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.35,
+        },
+      });
+
+      gsap.to("[data-floating-fruit-bg]", {
+        y: -18,
+        duration: 3.2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        stagger: {
+          each: 0.28,
+          from: "random",
+        },
+      });
+
+      gsap.to("[data-soft-pulse-bg]", {
+        scale: 1.08,
+        opacity: 0.85,
+        duration: 3.6,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        stagger: 0.4,
+      });
+    },
+    {
+      scope,
+    },
+  );
+
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,#FFF7ED_0%,#FFFFFF_24%,#ECFDF5_48%,#FFF7ED_72%,#FFFFFF_100%)]" />
+    <div
+      ref={scope}
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,#FFFDF7_0%,#FFF8EC_34%,#F4FBF6_68%,#FFFDF7_100%)]" />
+
       <div
-        data-kahala-parallax
-        data-speed="42"
-        className="absolute -left-32 top-[5%] h-[30rem] w-[30rem] rounded-full bg-green-200/55 blur-3xl will-change-transform"
-      />
-      <div
-        data-kahala-parallax
-        data-speed="-34"
-        className="absolute -right-28 top-[24%] h-[28rem] w-[28rem] rounded-full bg-orange-200/45 blur-3xl will-change-transform"
-      />
-      <div
-        data-kahala-parallax
-        data-speed="28"
-        className="absolute left-[18%] top-[72%] h-[24rem] w-[24rem] rounded-full bg-yellow-200/34 blur-3xl will-change-transform"
-      />
-      <div
-        data-kahala-parallax
-        data-speed="-24"
-        className="absolute right-[16%] top-[58%] h-[20rem] w-[20rem] rounded-full bg-pink-200/28 blur-3xl will-change-transform"
+        data-parallax-layer="grid"
+        className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(47,107,79,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(47,107,79,0.10)_1px,transparent_1px)] [background-size:56px_56px]"
       />
 
       <div
-        data-kahala-parallax
-        data-speed="58"
-        className="absolute -right-20 top-[7%] hidden h-80 w-80 overflow-hidden rounded-[2.5rem] border border-white/50 opacity-[0.26] shadow-2xl shadow-green-950/10 will-change-transform lg:block"
-      >
-        <Image src={KAHALA_IMAGES.freshFruitSpread} alt="" fill sizes="288px" className="object-cover" />
-      </div>
+        data-parallax-layer="mist-green"
+        data-soft-pulse-bg
+        className="absolute -left-40 top-16 h-[34rem] w-[34rem] rounded-full bg-emerald-200/45 blur-3xl"
+      />
+
       <div
-        data-kahala-parallax
-        data-speed="-52"
-        className="absolute -left-24 top-[43%] hidden h-80 w-80 overflow-hidden rounded-full border border-white/60 opacity-[0.24] shadow-2xl shadow-orange-950/10 will-change-transform lg:block"
-      >
-        <Image src={KAHALA_IMAGES.breakfastFruitBowls} alt="" fill sizes="320px" className="object-cover" />
-      </div>
+        data-parallax-layer="mist-amber"
+        data-soft-pulse-bg
+        className="absolute -right-44 top-[34rem] h-[38rem] w-[38rem] rounded-full bg-amber-200/45 blur-3xl"
+      />
+
       <div
-        data-kahala-parallax
-        data-speed="38"
-        className="absolute right-[5%] top-[76%] hidden h-72 w-72 overflow-hidden rounded-[2.25rem] border border-white/60 opacity-[0.24] shadow-2xl shadow-green-950/10 will-change-transform lg:block"
+        data-parallax-layer="mist-cream"
+        data-soft-pulse-bg
+        className="absolute left-1/2 top-[78rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[#FFF1C7]/55 blur-3xl"
+      />
+
+      <div
+        data-parallax-layer="card-a"
+        className="absolute left-[7%] top-[34rem] hidden h-36 w-36 rounded-[2rem] border border-white/70 bg-white/55 shadow-2xl shadow-emerald-950/10 backdrop-blur-xl lg:block"
+      />
+
+      <div
+        data-parallax-layer="card-b"
+        className="absolute right-[8%] top-[82rem] hidden h-44 w-44 rounded-full border border-white/70 bg-emerald-50/70 shadow-2xl shadow-emerald-950/10 backdrop-blur-xl lg:block"
+      />
+
+      <div
+        data-parallax-layer="ring-a"
+        className="absolute right-[14%] top-[28rem] hidden h-28 w-28 rounded-full border-[18px] border-emerald-200/55 md:block"
+      />
+
+      <div
+        data-parallax-layer="ring-b"
+        className="absolute left-[10%] top-[112rem] hidden h-24 w-24 rounded-full border-[16px] border-amber-200/65 md:block"
+      />
+
+      <div
+        data-floating-fruit-bg
+        className="absolute left-[6%] top-[24rem] hidden rounded-full bg-white/85 p-4 text-3xl shadow-xl shadow-emerald-950/10 backdrop-blur-md md:block"
       >
-        <Image src={KAHALA_IMAGES.citrusTable} alt="" fill sizes="256px" className="object-cover" />
+        🍓
       </div>
 
-      {fruitNotes.map((note, index) => (
-        <div
-          key={note.label}
-          data-kahala-parallax
-          data-speed={index % 2 === 0 ? "24" : "-18"}
-          className={`absolute hidden rounded-full border border-white/70 bg-white/70 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-green-800 shadow-lg shadow-green-950/5 backdrop-blur will-change-transform md:block ${note.className}`}
-        >
-          {note.label}
-        </div>
-      ))}
+      <div
+        data-floating-fruit-bg
+        className="absolute right-[7%] top-[58rem] hidden rounded-full bg-white/85 p-4 text-3xl shadow-xl shadow-emerald-950/10 backdrop-blur-md md:block"
+      >
+        🥝
+      </div>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.54),transparent_34rem),linear-gradient(90deg,rgba(255,247,237,0.54),rgba(255,255,255,0.16),rgba(236,253,245,0.38))]" />
-      <div className="absolute inset-0 bg-[radial-gradient(rgba(34,197,94,0.1)_1px,transparent_1px)] [background-size:22px_22px] opacity-60" />
+      <div
+        data-floating-fruit-bg
+        className="absolute left-[12%] top-[92rem] hidden rounded-full bg-white/85 p-4 text-3xl shadow-xl shadow-emerald-950/10 backdrop-blur-md md:block"
+      >
+        🍌
+      </div>
+
+      <div
+        data-floating-fruit-bg
+        className="absolute right-[13%] top-[126rem] hidden rounded-full bg-white/85 p-4 text-3xl shadow-xl shadow-emerald-950/10 backdrop-blur-md md:block"
+      >
+        🥗
+      </div>
+
+      <div
+        data-floating-fruit-bg
+        className="absolute left-[8%] bottom-[28rem] hidden rounded-full bg-white/85 p-4 text-3xl shadow-xl shadow-emerald-950/10 backdrop-blur-md lg:block"
+      >
+        🍊
+      </div>
     </div>
   );
 }

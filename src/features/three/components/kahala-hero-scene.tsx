@@ -8,11 +8,13 @@ import { FloatingFruit } from "@/features/three/components/floating-fruit";
 
 function HeroBowl() {
   const bowlRef = useRef<Group>(null);
+  const elapsedRef = useRef(0);
 
-  useFrame(({ clock }) => {
+  useFrame((_, delta) => {
     if (!bowlRef.current) return;
-    bowlRef.current.rotation.y = Math.sin(clock.elapsedTime * 0.28) * 0.11;
-    bowlRef.current.position.y = Math.sin(clock.elapsedTime * 0.75) * 0.035 - 0.24;
+    elapsedRef.current += delta;
+    bowlRef.current.rotation.y = Math.sin(elapsedRef.current * 0.28) * 0.11;
+    bowlRef.current.position.y = Math.sin(elapsedRef.current * 0.75) * 0.035 - 0.24;
   });
 
   return (

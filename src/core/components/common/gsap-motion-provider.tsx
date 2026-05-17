@@ -12,13 +12,16 @@ export function GsapMotionProvider() {
     gsap.registerPlugin(ScrollTrigger);
 
     const context = gsap.context(() => {
-      gsap.from("[data-gsap-hero] > *", {
-        y: 22,
-        duration: 0.8,
-        stagger: 0.08,
-        ease: "power3.out",
-        clearProps: "transform",
-      });
+      const heroItems = gsap.utils.toArray<HTMLElement>("[data-gsap-hero] > *");
+      if (heroItems.length) {
+        gsap.from(heroItems, {
+          y: 22,
+          duration: 0.8,
+          stagger: 0.08,
+          ease: "power3.out",
+          clearProps: "transform",
+        });
+      }
 
       gsap.utils.toArray<HTMLElement>("[data-gsap='fade-up']").forEach((element) => {
         gsap.from(element, {
@@ -35,7 +38,10 @@ export function GsapMotionProvider() {
       });
 
       gsap.utils.toArray<HTMLElement>("[data-gsap='stagger']").forEach((element) => {
-        gsap.from(element.children, {
+        const children = Array.from(element.children);
+        if (!children.length) return;
+
+        gsap.from(children, {
           y: 26,
           duration: 0.64,
           stagger: 0.07,
@@ -49,13 +55,16 @@ export function GsapMotionProvider() {
         });
       });
 
-      gsap.to("[data-gsap-float]", {
-        y: -10,
-        duration: 2.6,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      const floatingItems = gsap.utils.toArray<HTMLElement>("[data-gsap-float]");
+      if (floatingItems.length) {
+        gsap.to(floatingItems, {
+          y: -10,
+          duration: 2.6,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
 
       const parallaxZone = document.querySelector<HTMLElement>("[data-kahala-parallax-zone]");
       if (parallaxZone) {

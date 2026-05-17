@@ -11,6 +11,19 @@ export const PUBLIC_NAVIGATION = [
   { label: "Contact", href: APP_ROUTES.contact },
 ] as const;
 
+export const NAVBAR_NAVIGATION = [
+  { label: "Menu", href: APP_ROUTES.menu },
+  { label: "Bundles", href: APP_ROUTES.bundles },
+  { label: "Corporate", href: APP_ROUTES.corporateOrder },
+  { label: "Blog", href: APP_ROUTES.blog },
+  { label: "Contact", href: APP_ROUTES.contact },
+] as const;
+
+export const AUTH_NAVIGATION = [
+  { label: "Login", href: APP_ROUTES.login },
+  { label: "Register", href: APP_ROUTES.register },
+] as const;
+
 export const ADMIN_NAVIGATION = [
   { label: "Overview", href: APP_ROUTES.admin },
   { label: "Products", href: APP_ROUTES.adminProducts },
