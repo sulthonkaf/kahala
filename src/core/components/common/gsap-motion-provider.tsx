@@ -1,0 +1,65 @@
+"use client";
+
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+export function GsapMotionProvider() {
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const context = gsap.context(() => {
+      gsap.from("[data-gsap-hero] > *", {
+        y: 22,
+        duration: 0.8,
+        stagger: 0.08,
+        ease: "power3.out",
+        clearProps: "transform",
+      });
+
+      gsap.utils.toArray<HTMLElement>("[data-gsap='fade-up']").forEach((element) => {
+        gsap.from(element, {
+          y: 34,
+          duration: 0.75,
+          ease: "power3.out",
+          clearProps: "transform",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 84%",
+            once: true,
+          },
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>("[data-gsap='stagger']").forEach((element) => {
+        gsap.from(element.children, {
+          y: 26,
+          duration: 0.64,
+          stagger: 0.07,
+          ease: "power3.out",
+          clearProps: "transform",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 84%",
+            once: true,
+          },
+        });
+      });
+
+      gsap.to("[data-gsap-float]", {
+        y: -10,
+        duration: 2.6,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    });
+
+    return () => context.revert();
+  }, []);
+
+  return null;
+}

@@ -3,9 +3,7 @@ import { MessageCircle } from "lucide-react";
 import { generateGeneralOrderMessage, generateWhatsAppUrl } from "@/core/lib/whatsapp";
 
 export function FloatingWhatsAppButton() {
-  const href = generateWhatsAppUrl({
-    message: generateGeneralOrderMessage(),
-  });
+  const href = generateWhatsAppUrl(generateGeneralOrderMessage());
 
   return (
     <a
